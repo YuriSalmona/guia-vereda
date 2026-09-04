@@ -129,9 +129,11 @@
   }
   .controles-audio button:hover { background: var(--verde-claro); transform: translateY(-1px); }
   .controles-audio button[disabled] { opacity: .45; cursor: default; transform: none; }
-  .controles-audio button.tocando { background: var(--verde); color: var(--carta); }
-  :root[data-theme="dark"] .controles-audio button.tocando,
-  html:not([data-theme="light"]) .controles-audio button.tocando { color: #101408; }
+  .controles-audio button.tocando { background: var(--verde); color: #fffdf7; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .controles-audio button.tocando { color: #101408; }
+  }
+  :root[data-theme="dark"] .controles-audio button.tocando { color: #101408; }
   .controles-audio button:focus-visible { outline: 3px solid var(--laranja); outline-offset: 2px; }
   .estado-audio { font-size: 13px; color: var(--tinta-suave); font-family: Montserrat, sans-serif; }
   .lendo {
@@ -188,9 +190,11 @@
   }
   .ponto:hover { border-color: var(--agua); transform: translateY(-2px); box-shadow: var(--sombra); }
   .ponto:focus-visible { outline: 3px solid var(--laranja); outline-offset: 2px; }
-  .ponto[aria-expanded="true"] { background: var(--verde); border-color: var(--verde); color: var(--carta); }
-  :root[data-theme="dark"] .ponto[aria-expanded="true"],
-  html:not([data-theme="light"]) .ponto[aria-expanded="true"] { color: #101408; }
+  .ponto[aria-expanded="true"] { background: var(--verde); border-color: var(--verde); color: #fffdf7; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .ponto[aria-expanded="true"] { color: #101408; }
+  }
+  :root[data-theme="dark"] .ponto[aria-expanded="true"] { color: #101408; }
   .corre { color: var(--agua); user-select: none; font-size: 15px; }
 
   .explicacao {
@@ -230,10 +234,13 @@
   }
   .vitrine-topo {
     display: flex; align-items: center; gap: 8px; padding: 9px 14px;
-    background: var(--verde); color: var(--carta);
+    background: var(--verde); color: #fffdf7;
     font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .04em;
   }
-  :root[data-theme="dark"] .vitrine-topo, html:not([data-theme="light"]) .vitrine-topo { color: #101408; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .vitrine-topo { color: #101408; }
+  }
+  :root[data-theme="dark"] .vitrine-topo { color: #101408; }
   .vitrine-topo .bolinhas { display: flex; gap: 5px; margin-right: 4px; }
   .vitrine-topo .bolinhas i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .45; }
   /* min-height evita o salto de layout entre o desenho da página e a
@@ -250,7 +257,10 @@
     padding: 28px 0; border-bottom: 1px solid var(--borda);
   }
   .passo-n { font-size: 30px; font-weight: 800; line-height: 1; color: var(--bege); letter-spacing: -.04em; }
-  :root[data-theme="dark"] .passo-n, html:not([data-theme="light"]) .passo-n { color: var(--borda-forte); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .passo-n { color: var(--borda-forte); }
+  }
+  :root[data-theme="dark"] .passo-n { color: var(--borda-forte); }
   .passo-corpo h3 { font-size: 21px; color: var(--tinta); margin-bottom: 8px; }
   .passo-corpo p { margin: 0; }
   .passo-onde {
@@ -282,10 +292,17 @@
 
   /* ================================================ ACERVO / REGRAS / FIM */
   .duas { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-  .regra { padding: 26px; border-radius: var(--raio); background: var(--verde); color: var(--carta); }
-  :root[data-theme="dark"] .regra, html:not([data-theme="light"]) .regra { color: #101408; }
+  /* Fundo verde escuro pede tipo BRANCO. A regra do tema escuro (onde --verde
+     vira um verde claro e o texto tem de escurecer) estava fora do @media, e
+     por isso pintava #101408 sobre o verde escuro também no tema claro —
+     preto sobre verde escuro, sem contraste. Agora cada tema tem a sua. */
+  .regra { padding: 26px; border-radius: var(--raio); background: var(--verde); color: #fffdf7; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .regra { color: #101408; }
+  }
+  :root[data-theme="dark"] .regra { color: #101408; }
   .regra h3 { color: inherit; font-size: 20px; margin-bottom: 10px; }
-  .regra p { margin: 0; opacity: .93; font-size: 16px; }
+  .regra p { margin: 0; color: inherit; opacity: .95; font-size: 16px; }
   .acervo {
     display: grid; gap: 24px; align-items: center;
     grid-template-columns: minmax(0, 1fr) minmax(200px, 320px);
