@@ -690,6 +690,61 @@
     <div class="passos" id="passos-lista"></div>
   </section>
 
+  <!-- ========================================================= PANORAMA -->
+  <section id="panorama">
+    <span class="rotulo surge">Para quem dirige a casa</span>
+    <h2 class="surge" data-ler>O Instituto inteiro numa tela</h2>
+    <p class="sub-h2 surge d1" data-ler>
+      Os nove passos acima acontecem dentro de um projeto. Há uma pergunta, porém, que não cabe
+      em projeto nenhum: <strong>como está o Instituto?</strong> É a pergunta de quem responde
+      pela casa, e ela atravessa todos os projetos ao mesmo tempo.
+    </p>
+
+    <div class="duas surge d2">
+      <div class="regra">
+        <h3 data-ler>Abre pelo que precisa de atenção</h3>
+        <p data-ler>
+          Antes de qualquer gráfico. Prestação de contas vencida ou devolvida, produto de contrato
+          com prazo estourado, projeto muito atrás do prazo, contrato a vencer em trinta dias,
+          lançamento do banco ainda sem classificação — tudo o que hoje mora em cinco telas
+          diferentes, reunido numa lista só, ordenada por urgência e não por origem.
+        </p>
+        <p data-ler style="margin-top:10px">
+          E nada entra ali sem ter conserto: cada linha diz para onde ir. Aviso sem saída é ruído,
+          e três ruídos ensinam a ignorar a caixa inteira.
+        </p>
+      </div>
+      <div class="regra">
+        <h3 data-ler>Depois, o dinheiro no tempo</h3>
+        <p data-ler>
+          Duas curvas acumuladas, mês a mês do calendário: o que foi prometido aos financiadores e
+          o que de fato saiu. A distância entre elas é o quanto o Instituto está adiantado ou
+          atrasado — e ela aparece antes de alguém precisar somar planilha nenhuma.
+        </p>
+        <p data-ler style="margin-top:10px">
+          Projeto a projeto, a mesma pergunta vira um medidor: a barra é quanto do orçamento já foi
+          executado, e o traço vertical é onde o <strong>prazo</strong> está. Barra bem atrás do
+          traço é projeto que corre o risco de devolver dinheiro no fim.
+        </p>
+      </div>
+    </div>
+
+    <p class="surge d3" data-ler style="margin-top:18px">
+      Duas coisas que este quadro se recusa a fazer, e que valem ser ditas em voz alta. Ele
+      <strong>não conta proposta como carteira</strong>: projeto ainda em elaboração aparece
+      separado, porque até a assinatura é dinheiro que pode não vir — e é justamente esse o número
+      que alguém repete numa reunião. E ele <strong>não arredonda entrega para cima</strong>: uma
+      entrega só conta como cumprida quando todos os produtos que a realizam foram entregues. Meia
+      entrega não é entrega.
+    </p>
+
+    <p class="surge d3" data-ler>
+      O Panorama é visível para a administração e para a equipe de Operações, pela mesma razão do
+      financeiro consolidado: ele mostra o orçamento de todos os projetos juntos, inclusive dos
+      que uma pessoa não coordena.
+    </p>
+  </section>
+
   <!-- =========================================================== ACERVO -->
   <section id="acervo">
     <span class="rotulo surge">O que já estava aqui antes</span>
@@ -764,9 +819,16 @@
           trabalho de quem entende do assunto.
         </li>
         <li data-ler>
-          <b>Ela não importa planilha antiga sozinha.</b> A entrada é pelos formulários
-          guiados, que ensinam enquanto se preenche. Carga em lote existe, é restrita à
-          administração, e sempre mostra o que vai gravar antes de gravar.
+          <b>Ela ainda não devolve os dados em planilha.</b> Qualquer tela imprime bem —
+          Ctrl+P produz um PDF apresentável, sem menu e sem botões, com a tabela repetindo o
+          cabeçalho a cada página —, e isso já resolve levar um quadro para uma reunião ou anexar
+          a uma prestação de contas. O que ainda não existe é um botão que devolva os números em
+          arquivo de planilha.
+        </li>
+        <li data-ler>
+          <b>Ela não importa planilha antiga sozinha.</b> A entrada é pelos formulários guiados,
+          que ensinam enquanto se preenche. Carga em lote existe, é restrita à administração, e
+          sempre mostra o que vai gravar antes de gravar.
         </li>
       </ul>
     </div>
@@ -949,9 +1011,9 @@
       onde: "Financeiro",
       devolve: "Painel com previsto, realizado e a executar; a repartição por rubrica em uma barra só; e o cronograma mês a mês, que é o que o financiador pede como previsão de desembolso." },
     { t: "Conciliar com o extrato", i: "conciliar",
-      d: "A qualquer momento, você baixa o extrato da conta em OFX — o formato que todo banco oferece — e carrega na plataforma. Cada lançamento reencontra o seu movimento pelo identificador único do banco, então subir o mesmo arquivo duas vezes não cria duplicata. O que estiver no extrato e ainda não na plataforma aparece para você conferir e classificar.",
+      d: "A qualquer momento, você baixa o extrato da conta em OFX — o formato que todo banco oferece — e carrega na plataforma. Antes de gravar qualquer coisa, ela mostra o que vai casar, o que ficou ambíguo e o que o banco tem e a plataforma não. Cada lançamento reencontra o seu movimento pelo identificador único do banco, então subir o mesmo arquivo duas vezes não cria duplicata. E o que saiu da conta e ainda não tem lugar no plano vira uma <b>fila de trabalho</b>, que sobrevive à recarga da página e pode ser retomada em outro dia: cada linha abre um formulário ali mesmo, pedindo só o que o banco não sabe — de que projeto é, e que item do orçamento aquele gasto executa. A rubrica vem do item, nunca digitada; data e valor não se editam, porque são o fato que a conciliação atesta.",
       onde: "Financeiro → Conciliação bancária",
-      devolve: "O saldo da plataforma e o do banco passam a ser o mesmo número, verificável em qualquer dia — e não só no fechamento." },
+      devolve: "O realizado deixa de ser “alguém digitou” e passa a ser “o banco confirmou”: é a diferença entre um relatório que se escreve e um relatório que se prova. E, da segunda vez em diante, a plataforma reconhece quem já recebeu antes e sugere a classificação sozinha — o segundo mês custa uma fração do primeiro." },
     { t: "Prestar contas", i: "prestar",
       d: "As conferências de consistência rodam por bloco, conforme você preenche, e mostram o que ainda falta. No fim do período, a prestação de contas encerra o que já foi conferido.",
       onde: "Consistência · Validações · Financeiro",
