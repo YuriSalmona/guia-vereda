@@ -791,6 +791,35 @@
     </div>
   </section>
 
+  <!-- ================================================= CONTAS SEGREGADAS -->
+  <section id="contas">
+    <span class="rotulo surge">Dinheiro que tem dono</span>
+    <h2 class="surge" data-ler>Cada recurso restrito na conta dele</h2>
+    <div class="acervo surge d1">
+      <div>
+        <p data-ler>
+          Financiador de projeto quase sempre exige <strong>conta segregada</strong>: o dinheiro
+          dele entra e sai de uma conta que é só daquele projeto, e a auditoria confere isso.
+          Na Vereda, cada conta bancária diz a que projeto e a que financiador pertence — e as
+          contas que não dizem nada são as institucionais, por onde passa o custeio da casa.
+        </p>
+        <p data-ler>
+          A partir daí a plataforma recusa o cruzamento, na hora de gravar: o pagamento de um
+          projeto lançado na conta de outro, o custeio da casa saindo da conta de um projeto, o
+          recurso de um financiador saindo da conta de outro. <strong>É exatamente o achado que
+          o auditor procura</strong> — e é melhor ele não existir do que ser explicado depois.
+        </p>
+        <p data-ler>
+          Há também a <strong>devolução de saldo</strong>, que o fim de um projeto quase sempre
+          traz: dinheiro que não foi usado e volta ao financiador. Ela não é gasto — não tem nota
+          fiscal e não executa rubrica nenhuma —, e por isso tem lugar próprio na plataforma: ela
+          abate o recebido, em vez de somar ao realizado. Na fila do extrato há uma caixa para
+          dizer que aquele débito é uma devolução.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ====================================================== INVENTÁRIO -->
   <section id="inventario">
     <span class="rotulo surge">O que é da casa</span>
@@ -975,7 +1004,7 @@
       v: "Recebe do item de orçamento — e é daí que a rubrica chega pronta, sem digitação." },
     { g: "foz", n: "Conciliação bancária",
       d: "O extrato do banco em arquivo OFX, carregado a qualquer momento. Cada lançamento reencontra o seu movimento pelo identificador único que o banco atribui, então subir o mesmo extrato duas vezes não cria duplicata. O que o extrato traz e a plataforma ainda não tem aparece para conferência, e o que a plataforma tem e o extrato não confirma fica sinalizado.",
-      v: "Recebe do banco e volta para os movimentos, que passam a ter uma data de conciliação. É o que faz o saldo da plataforma e o do extrato serem o mesmo número." },
+      v: "Recebe do banco e volta para os movimentos, que passam a ter uma data de conciliação. É o que faz o saldo da plataforma e o do extrato serem o mesmo número. O arquivo também traz o saldo da conta, e a Vereda confere se ele fecha com o extrato anterior mais os lançamentos: quando não fecha, é sinal de que o período baixado tem um buraco." },
     { g: "foz", n: "Prestação de contas",
       d: "O período conferido e encerrado. Depois disso, o que está dentro dele permanece como foi entregue.",
       v: "Encerra por cima dos movimentos. É o que transforma registro em prestação." }
